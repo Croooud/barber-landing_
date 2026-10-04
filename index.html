@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blade & Beard — барбершоп</title>
+<meta name="description" content="Blade & Beard — мужской барбершоп. Стрижки, борода, бритьё опасной бритвой. Онлайн-запись.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { ink: '#0A0A0A', graphite: '#141414', gold: '#D4AF37', steel: '#A3A3A3' },
+      fontFamily: {
+        display: ['Oswald', 'Impact', 'sans-serif'],
+        body: ['Montserrat', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  /* Только служебные стили: сетка и вёрстка — на Tailwind */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .swiper-pagination-bullet { background: #fff; opacity: .3; border-radius: 0; width: 18px; height: 3px; }
+  .swiper-pagination-bullet-active { background: #D4AF37; opacity: 1; }
+</style>
+</head>
+
+<body class="bg-ink text-white font-body antialiased selection:bg-gold selection:text-ink">
+
+<!-- Шапка -->
+<header class="fixed top-0 inset-x-0 z-50 bg-ink/80 backdrop-blur border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="font-display text-xl uppercase tracking-[0.2em]">Blade <span class="text-gold">&</span> Beard</a>
+    <nav class="hidden md:flex gap-8 text-xs uppercase tracking-[0.2em] text-steel">
+      <a href="#about" class="hover:text-gold transition-colors">О нас</a>
+      <a href="#gallery" class="hover:text-gold transition-colors">Работы</a>
+      <a href="#prices" class="hover:text-gold transition-colors">Прайс</a>
+      <a href="#contacts" class="hover:text-gold transition-colors">Контакты</a>
+    </nav>
+    <a href="#" class="bg-gold text-ink text-xs font-bold uppercase tracking-[0.15em] px-4 py-2.5 rounded-none hover:bg-white transition-colors">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="relative min-h-screen flex items-end md:items-center overflow-hidden bg-graphite">
+  <img data-ph="hero" alt="Интерьер барбершопа" class="absolute inset-0 w-full h-full object-cover opacity-60">
+  <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30"></div>
+  <div class="relative max-w-6xl mx-auto px-5 pb-20 pt-32 w-full">
+    <p data-reveal class="text-gold text-xs uppercase tracking-[0.35em] mb-6">Барбершоп · с 2016</p>
+    <h1 data-reveal class="font-display font-bold uppercase leading-[0.95] text-5xl sm:text-7xl lg:text-8xl max-w-4xl">
+      Больше, чем <br>стрижка. <span class="text-gold">Это характер.</span>
+    </h1>
+    <p data-reveal class="mt-8 max-w-md text-steel leading-relaxed">
+      Точные стрижки, чёткие линии бороды и бритьё опасной бритвой. Без суеты — только результат.
+    </p>
+    <div data-reveal class="mt-10 flex flex-col sm:flex-row gap-4">
+      <a href="#" class="inline-flex items-center justify-center gap-3 bg-gold text-ink font-bold uppercase tracking-[0.15em] text-sm px-8 py-4 rounded-none hover:bg-white transition-colors">
+        Записаться онлайн <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+      <a href="#prices" class="inline-flex items-center justify-center border border-white/10 hover:border-gold text-sm uppercase tracking-[0.15em] px-8 py-4 rounded-none transition-colors">Услуги и цены</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. О МАСТЕРЕ / САЛОНЕ -->
+<section id="about" class="py-24 md:py-36 bg-ink">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+    <div data-reveal class="md:col-span-5 relative">
+      <img data-ph="portrait" alt="Главный барбер" class="w-full aspect-[4/5] object-cover border border-white/10 rounded-none">
+      <div class="absolute -bottom-4 -right-4 hidden md:block w-32 h-32 border border-gold/60 -z-0"></div>
+    </div>
+    <div class="md:col-span-7">
+      <p data-reveal class="text-gold text-xs uppercase tracking-[0.35em] mb-4">О барбершопе</p>
+      <h2 data-reveal class="font-display font-bold uppercase text-4xl sm:text-5xl leading-tight mb-8">Точность. Стиль.<br>Уверенность.</h2>
+      <p data-reveal class="text-steel leading-relaxed mb-6">
+        Blade & Beard — это место, где мужчина получает не просто стрижку, а ровно тот образ, который ему нужен. Мы работаем медленно там, где нужна точность, и быстро там, где вы ценитe своё время.
+      </p>
+      <p data-reveal class="text-steel leading-relaxed mb-10">
+        Стерильные инструменты после каждого клиента, профессиональная косметика и сервис без лишних слов: кофе, виски и честный разговор.
+      </p>
+      <div data-reveal class="grid grid-cols-3 border border-white/10 divide-x divide-white/10">
+        <div class="p-5 text-center"><div class="font-display text-3xl sm:text-4xl text-gold">10+</div><div class="text-[10px] sm:text-xs uppercase tracking-widest text-steel mt-2">лет опыта</div></div>
+        <div class="p-5 text-center"><div class="font-display text-3xl sm:text-4xl text-gold">15K</div><div class="text-[10px] sm:text-xs uppercase tracking-widest text-steel mt-2">клиентов</div></div>
+        <div class="p-5 text-center"><div class="font-display text-3xl sm:text-4xl text-gold">4.9</div><div class="text-[10px] sm:text-xs uppercase tracking-widest text-steel mt-2">рейтинг</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ГАЛЕРЕЯ РАБОТ (перед прайсом) -->
+<section id="gallery" class="py-24 md:py-36 bg-graphite border-y border-white/10 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="mb-12 flex items-end justify-between">
+      <div>
+        <p data-reveal class="text-gold text-xs uppercase tracking-[0.35em] mb-4">Портфолио</p>
+        <h2 data-reveal class="font-display font-bold uppercase text-4xl sm:text-5xl">Наши работы</h2>
+      </div>
+      <p data-reveal class="hidden sm:block text-steel text-xs uppercase tracking-widest">Листайте →</p>
+    </div>
+
+    <div data-reveal class="swiper gallery-swiper !overflow-visible">
+      <div class="swiper-wrapper" id="gallery-slides"></div>
+      <div class="swiper-pagination !relative !mt-10"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ПРАЙС-ЛИСТ -->
+<section id="prices" class="py-24 md:py-36 bg-ink">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="mb-14 max-w-xl">
+      <p data-reveal class="text-gold text-xs uppercase tracking-[0.35em] mb-4">Услуги</p>
+      <h2 data-reveal class="font-display font-bold uppercase text-4xl sm:text-5xl">Прайс-лист</h2>
+    </div>
+
+    <div id="price-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+    <p data-reveal class="mt-10 text-steel text-sm">Все услуги включают горячее полотенце и укладку. Кофе — за наш счёт.</p>
+  </div>
+</section>
+
+<!-- 5. КОНТАКТЫ -->
+<section id="contacts" class="py-24 md:py-36 bg-graphite border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-14">
+    <div>
+      <p data-reveal class="text-gold text-xs uppercase tracking-[0.35em] mb-4">Контакты</p>
+      <h2 data-reveal class="font-display font-bold uppercase text-4xl sm:text-5xl mb-10">Ждём вас</h2>
+      <ul class="space-y-6">
+        <li data-reveal class="flex gap-4"><i data-lucide="map-pin" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i><span class="text-steel">г. Москва, ул. Тверская, д. 16, этаж 2</span></li>
+        <li data-reveal class="flex gap-4"><i data-lucide="clock" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i><span class="text-steel">Пн–Вс: 10:00 – 21:00<br>Без выходных</span></li>
+        <li data-reveal class="flex gap-4"><i data-lucide="phone" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i><a href="tel:+79991234567" class="text-white hover:text-gold transition-colors">+7 (999) 123-45-67</a></li>
+      </ul>
+      <div data-reveal class="mt-10 flex gap-3">
+        <a href="#" aria-label="Instagram" class="w-12 h-12 border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="Telegram" class="w-12 h-12 border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-colors"><i data-lucide="send" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="WhatsApp" class="w-12 h-12 border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+
+    <div data-reveal class="border border-white/10 bg-ink p-8 md:p-10 flex flex-col justify-center">
+      <h3 class="font-display uppercase text-2xl sm:text-3xl mb-4">Запишитесь на удобное время</h3>
+      <p class="text-steel mb-8 leading-relaxed">Выберите барбера, услугу и время онлайн — это займёт меньше минуты.</p>
+      <a href="#" class="inline-flex items-center justify-center gap-3 bg-gold text-ink font-bold uppercase tracking-[0.15em] text-sm px-8 py-4 rounded-none hover:bg-white transition-colors">
+        Записаться онлайн <i data-lucide="calendar" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-ink border-t border-white/10 py-10">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row justify-between gap-4 text-xs text-steel uppercase tracking-widest">
+    <span class="font-display text-base tracking-[0.2em] text-white">Blade <span class="text-gold">&</span> Beard</span>
+    <span>© 2026 Все права защищены</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+/* ---------- Локальные заглушки (inline SVG, без внешних картинок) ---------- */
+function placeholder(label, w, h, variant) {
+  var tones = [['#1c1c1c', '#0a0a0a'], ['#232019', '#0a0a0a'], ['#181a1d', '#0a0a0a'], ['#201c14', '#0e0e0e']];
+  var t = tones[variant % tones.length];
+  var svg =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + t[0] + '"/><stop offset="1" stop-color="' + t[1] + '"/></linearGradient>' +
+    '<pattern id="p" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1" height="28" fill="#ffffff" fill-opacity="0.04"/></pattern></defs>' +
+    '<rect width="100%" height="100%" fill="url(#g)"/><rect width="100%" height="100%" fill="url(#p)"/>' +
+    '<g transform="translate(' + w / 2 + ',' + h / 2 + ')" fill="none" stroke="#D4AF37" stroke-width="2" stroke-opacity="0.75" stroke-linecap="square">' +
+    '<circle cx="-16" cy="22" r="10"/><circle cx="16" cy="22" r="10"/><path d="M-10 14 L14 -30 M10 14 L-14 -30"/></g>' +
+    '<text x="50%" y="' + (h / 2 + 70) + '" text-anchor="middle" font-family="Arial, sans-serif" font-size="' + Math.max(12, w / 38) + '" letter-spacing="4" fill="#A3A3A3" fill-opacity="0.8">' + label + '</text>' +
+    '</svg>';
+  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+}
+
+/* Фото из интернета (по ключевым словам) + автоматический откат на локальную SVG-заглушку */
+function photo(keywords, w, h, lock) {
+  return 'https://loremflickr.com/' + w + '/' + h + '/' + keywords + '?lock=' + lock;
+}
+function withFallback(img, url, fbLabel, fbW, fbH, fbVariant) {
+  img.onerror = function () { img.onerror = null; img.src = placeholder(fbLabel, fbW, fbH, fbVariant); };
+  img.src = url;
+}
+
+document.querySelectorAll('img[data-ph]').forEach(function (img) {
+  var k = img.dataset.ph;
+  if (k === 'hero') withFallback(img, photo('barbershop,barber', 1600, 1000, 11), 'BLADE & BEARD', 1600, 1000, 1);
+  else withFallback(img, photo('barber,beard,man', 800, 1000, 12), 'MASTER', 800, 1000, 0);
+});
+
+/* ---------- Галерея ---------- */
+var works = ['FADE', 'BEARD', 'CLASSIC', 'UNDERCUT', 'SHAVE', 'POMPADOUR'];
+document.getElementById('gallery-slides').innerHTML = works.map(function (n, i) {
+  return '<div class="swiper-slide !w-[75%] sm:!w-[40%] lg:!w-[28%]">' +
+    '<div class="border border-white/10 overflow-hidden group">' +
+    '<img data-g="' + i + '" alt="Работа: ' + n + '" loading="lazy" class="w-full aspect-[3/4] object-cover rounded-none transition-transform duration-700 group-hover:scale-105">' +
+    '</div></div>';
+}).join('');
+var gKeys = ['haircut,fade', 'beard,barber', 'barbershop,haircut', 'undercut,hairstyle', 'barber,shave', 'pompadour,hair'];
+document.querySelectorAll('img[data-g]').forEach(function (img) {
+  var i = +img.dataset.g;
+  withFallback(img, photo(gKeys[i], 600, 800, 20 + i), works[i], 600, 800, i);
+});
+
+/* ---------- Прайс ---------- */
+var services = [
+  { icon: 'scissors', name: 'Мужская стрижка', price: 'от 2 000 ₽', time: '60 мин' },
+  { icon: 'user', name: 'Оформление бороды', price: 'от 1 500 ₽', time: '45 мин' },
+  { icon: 'flame', name: 'Королевское бритьё', price: 'от 2 000 ₽', time: '45 мин' },
+  { icon: 'layers', name: 'Стрижка + борода', price: 'от 3 200 ₽', time: '90 мин' },
+  { icon: 'baby', name: 'Детская стрижка', price: 'от 1 500 ₽', time: '40 мин' },
+  { icon: 'sparkles', name: 'Камуфляж седины', price: 'от 1 800 ₽', time: '30 мин' }
+];
+document.getElementById('price-grid').innerHTML = services.map(function (s) {
+  return '<article data-card class="group border border-white/10 bg-graphite p-7 rounded-none transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-black/60 hover:border-gold/60 flex flex-col">' +
+    '<i data-lucide="' + s.icon + '" class="w-7 h-7 text-gold mb-6"></i>' +
+    '<h3 class="font-display uppercase text-xl tracking-wide mb-2">' + s.name + '</h3>' +
+    '<p class="text-steel text-sm flex items-center gap-2 mb-8"><i data-lucide="clock" class="w-4 h-4"></i>' + s.time + '</p>' +
+    '<div class="mt-auto flex items-center justify-between pt-6 border-t border-white/10">' +
+    '<span class="font-display text-2xl text-gold">' + s.price + '</span>' +
+    '<a href="#" class="text-xs font-bold uppercase tracking-[0.15em] border border-gold text-gold px-4 py-2.5 rounded-none hover:bg-gold hover:text-ink transition-colors">Выбрать</a>' +
+    '</div></article>';
+}).join('');
+
+/* ---------- Иконки ---------- */
+if (window.lucide) lucide.createIcons();
+
+/* ---------- Swiper ---------- */
+if (window.Swiper) {
+  new Swiper('.gallery-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    grabCursor: true,
+    freeMode: { enabled: true, sticky: false },
+    pagination: { el: '.swiper-pagination', clickable: true }
+  });
+}
+
+/* ---------- Lenis ---------- */
+if (window.Lenis) {
+  var lenis = new Lenis({ duration: 1.2, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
+  (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })(0);
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length > 1 && document.querySelector(id)) {
+        e.preventDefault();
+        lenis.scrollTo(id, { offset: -64 });
+      }
+    });
+  });
+}
+
+/* ---------- GSAP: появление блоков при скролле ---------- */
+if (window.gsap && 'IntersectionObserver' in window) {
+  var targets = document.querySelectorAll('[data-reveal], [data-card]');
+  gsap.set(targets, { opacity: 0, y: 40 });
+  var seen = 0;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        gsap.to(en.target, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', delay: (seen++ % 3) * 0.08 });
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  targets.forEach(function (el) { io.observe(el); });
+  /* страховка: если что-то не сработало — через 4 с всё показываем */
+  setTimeout(function () { gsap.to(targets, { opacity: 1, y: 0, duration: .4, overwrite: false }); }, 6000);
+}
+</script>
+</body>
+</html>
